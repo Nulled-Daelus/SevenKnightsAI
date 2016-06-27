@@ -24,181 +24,94 @@ namespace SevenKnightsAI.Classes
 
 		#region Private Fields
 		private const int COOLDOWN_INBOX = 1800000;
-
 		private const int COOLDOWN_QUESTS = 1800000;
-
 		private const int COOLDOWN_SELL_HEROES = 900000;
-
 		private const int COOLDOWN_SELL_ITEMS = 900000;
-
 		private const int COOLDOWN_SEND_HONORS = 1800000;
-
 		private const int HANG_FINGERPRINT_SIZE = 50;
-
 		private const int MAX_HANG_TIME = 30000;
-
 		private const int MAX_HERO_MANAGE_ATTEMPS = 3;
-
 		private const int MAX_IDLE_TIME = 8000;
-
 		private const int MAX_MAP_SELECT_TIME = 10000;
-
 		private const int PIXEL_TOLERANCE = 2;
-
-		private const string PUSHBULLET_TOKEN = "SpD0cXpZzSFuLlNBVO6Zo2wKK0jVEkZK";
-
+		private const string PUSHBULLET_TOKEN = "";
 		private const int SLEEP_L = 1000;
-
 		private const int SLEEP_M = 500;
-
 		private const int SLEEP_S = 300;
-
 		private const int SLEEP_XL = 2000;
-
 		private const int SLEEP_XS = 100;
-
 		private const int SLEEP_XXL = 3000;
-
 		private readonly Color COLOR_ARENA = Color.Peru;
-
 		private readonly Color COLOR_BUY_KEYS = Color.SaddleBrown;
-
 		private readonly Color COLOR_DEATH = Color.Indigo;
-
 		private readonly Color COLOR_HEROES_MANAGEMENT = Color.Navy;
-
 		private readonly Color COLOR_HONOR = Color.MidnightBlue;
-
 		private readonly Color COLOR_INBOX = Color.MediumTurquoise;
-
 		private readonly Color COLOR_LEVEL_30 = Color.MediumPurple;
-
 		private readonly Color COLOR_LEVEL_UP = Color.Orchid;
-
 		private readonly Color COLOR_LIMIT = Color.Peru;
-
 		private readonly Color COLOR_QUEST = Color.SandyBrown;
-
 		private readonly Color COLOR_RAID = Color.RoyalBlue;
-
 		private readonly Color COLOR_SELL_HEROES = Color.MediumVioletRed;
-
 		private readonly Color COLOR_SELL_ITEMS = Color.SeaGreen;
-
 		private readonly Color COLOR_WAVE = Color.RoyalBlue;
 
 		private int AdventureCount;
-
 		private int AdventureKeys;
-
 		private TimeSpan AdventureKeyTime;
-
 		private int AdventureLimitCount;
-
 		private AIProfiles AIProfiles;
-
 		private int ArenaKeys;
-
 		private TimeSpan ArenaKeyTime;
-
 		private int ArenaLimitCount;
-
 		private int ArenaLoseCount;
-
 		private int ArenaRubiesCount;
-
 		private int ArenaWinCount;
-
 		private int CollectQuestsCount;
-
 		private int CollectQuestsTotal;
-
 		private int CooldownInbox;
-
 		private int CooldownQuests;
-
 		private int CooldownSellHeroes;
-
 		private int CooldownSellItems;
-
 		private int CooldownSendHonors;
-
 		private int[] CurrentFingerprint;
-
 		private Objective CurrentObjective;
-
 		private int CurrentRaidTeam;
-
 		private Scene CurrentScene;
-
 		private int CurrentSequence;
-
 		private int CurrentSequenceCount;
-
 		private int CurrentSkill;
-
 		private int[] CurrentSkillSet;
-
 		private int CurrentWave;
-
 		private bool EnableLuckyBox;
-
 		private bool EnableRaidRewards;
-
 		private int GoldChamberCount;
-
 		private int GoldChamberLimitCount;
-
 		private int GoldCount;
-
 		private int HangCounter;
-
 		private int HeroManageAttemps;
-
 		private int HonorCount;
-
 		private int IdleCounter;
-
 		private int KeysBoughtHonors;
-
 		private int KeysBoughtRubies;
-
 		private bool LoopSkill;
-
 		private int MapCheckCount;
-
 		private int MapSelectCounter;
-
 		private bool MasteryChecked;
-
 		private System.Timers.Timer OneSecTimer;
-
 		private int PressedSkill;
-
 		private int[] PreviousFingerprint;
-
 		private Objective PreviousObjective;
-
 		private Scene PreviousScene;
-
 		private SlimPushbullet Pushbullet;
-
 		private int RaidCount;
-
 		private int RaidLimitCount;
-
 		private int RubyCount;
-
 		private SynchronizationContext SynchronizationContext;
-
 		private Tesseractor Tesseractor;
-
 		private int TopazCount;
-
 		private int TowerKeys;
-
 		private TimeSpan TowerKeyTime;
-
 		private BackgroundWorker Worker;
 		#endregion Private Fields
 

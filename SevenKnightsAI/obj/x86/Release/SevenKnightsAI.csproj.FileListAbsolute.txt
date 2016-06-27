@@ -44,3 +44,5 @@ C:\Users\lbrunton\Source\Repos\sevenknightsai\SevenKnightsAI\obj\x86\Release\Sev
 C:\Users\lbrunton\Source\Repos\sevenknightsai\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.csproj.GenerateResource.Cache
 C:\Users\lbrunton\Source\Repos\sevenknightsai\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.exe
 C:\Users\lbrunton\Source\Repos\sevenknightsai\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.pdb
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.exe
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.pdb
