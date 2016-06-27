@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3685EE23-CE32-483F-B632-6ABBDF7071AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SevenKnightsAI</RootNamespace>
+    <AssemblyName>SevenKnightsAI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>rachel.ico</ApplicationIcon>
+    <StartupObject>SevenKnightsAI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>External Files\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="RestSharp">
+      <HintPath>External Files\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Tesseract">
+      <HintPath>External Files\Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>External Files\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoItX3.Assembly">
+      <HintPath>External Files\AutoItX3.Assembly.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AIProfiles.cs" />
+    <Compile Include="Classes\AISettings.cs" />
+    <Compile Include="Classes\AISettingsException.cs" />
+    <Compile Include="Classes\ArchiveManager.cs" />
+    <Compile Include="Classes\AutoSpy.cs" />
+    <Compile Include="Classes\BlueStacks.cs" />
+    <Compile Include="Classes\BuyKeyHonorsType.cs" />
+    <Compile Include="Classes\BuyKeyRubiesType.cs" />
+    <Compile Include="Classes\CursorHelper.cs" />
+    <Compile Include="Classes\Difficulty.cs" />
+    <Compile Include="Classes\Extensions\BitmapExtensions.cs" />
+    <Compile Include="Classes\Extensions\MyExtensions.cs" />
+    <Compile Include="Classes\Extensions\RichTextBoxExtensions.cs" />
+    <Compile Include="Classes\ForegroundCapture.cs" />
+    <Compile Include="Classes\Formation.cs" />
+    <Compile Include="Classes\HotTimeHelper.cs" />
+    <Compile Include="Classes\Imaging\ImageHashing.cs" />
+    <Compile Include="Classes\Imaging\LockBitmap.cs" />
+    <Compile Include="Classes\Mappings\AdsPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureFightPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureLootGoldPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureLootHeroPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureLootItemPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureLostPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureModesPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureReadyPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureStartPM.cs" />
+    <Compile Include="Classes\Mappings\AndroidPopupPM.cs" />
+    <Compile Include="Classes\Mappings\ArenaEndPM.cs" />
+    <Compile Include="Classes\Mappings\ArenaFightPM.cs" />
+    <Compile Include="Classes\Mappings\ArenaFullHonorPopupPM.cs" />
+    <Compile Include="Classes\Mappings\ArenaReadyPM.cs" />
+    <Compile Include="Classes\Mappings\ArenaStartPM.cs" />
+    <Compile Include="Classes\Mappings\BattleModesPM.cs" />
+    <Compile Include="Classes\Mappings\CheckInPM.cs" />
+    <Compile Include="Classes\Mappings\DialogPM.cs" />
+    <Compile Include="Classes\Mappings\DisconnectedPopupPM.cs" />
+    <Compile Include="Classes\Mappings\EnterRaidAgainPopupPM.cs" />
+    <Compile Include="Classes\Mappings\FriendsPM.cs" />
+    <Compile Include="Classes\Mappings\FullHeroPopupPM.cs" />
+    <Compile Include="Classes\Mappings\FullItemPopupPM.cs" />
+    <Compile Include="Classes\Mappings\GiftFullHeroPopupPM.cs" />
+    <Compile Include="Classes\Mappings\GiftFullHonorPopupPM.cs" />
+    <Compile Include="Classes\Mappings\GiftFullItemPopupPM.cs" />
+    <Compile Include="Classes\Mappings\GiftRewardsPopupPM.cs" />
+    <Compile Include="Classes\Mappings\GoldChamberLootPM.cs" />
+    <Compile Include="Classes\Mappings\HeroesPM.cs" />
+    <Compile Include="Classes\Mappings\HeroesSameTeamPopupPM.cs" />
+    <Compile Include="Classes\Mappings\HeroJoinPM.cs" />
+    <Compile Include="Classes\Mappings\HeroRemovePM.cs" />
+    <Compile Include="Classes\Mappings\InboxCollectFailedPopupPM.cs" />
+    <Compile Include="Classes\Mappings\InboxPM.cs" />
+    <Compile Include="Classes\Mappings\InboxRewardsPopupPM.cs" />
+    <Compile Include="Classes\Mappings\InboxSelectHeroPM.cs" />
+    <Compile Include="Classes\Mappings\LandingPM.cs" />
+    <Compile Include="Classes\Mappings\Level30DialogPM.cs" />
+    <Compile Include="Classes\Mappings\Level30MaxDialogPM.cs" />
+    <Compile Include="Classes\Mappings\LevelUpDialogPM.cs" />
+    <Compile Include="Classes\Mappings\LobbyPM.cs" />
+    <Compile Include="Classes\Mappings\LoginPM.cs" />
+    <Compile Include="Classes\Mappings\LootHeroPM.cs" />
+    <Compile Include="Classes\Mappings\LootItemPM.cs" />
+    <Compile Include="Classes\Mappings\MapSelectPM.cs" />
+    <Compile Include="Classes\Mappings\MapSelectPopupPM.cs" />
+    <Compile Include="Classes\Mappings\MasteryPopupPM.cs" />
+    <Compile Include="Classes\Mappings\NetmarbleSplashPM.cs" />
+    <Compile Include="Classes\Mappings\NoticePM.cs" />
+    <Compile Include="Classes\Mappings\OutOfKeysOfferPM.cs" />
+    <Compile Include="Classes\Mappings\OutOfKeysPopupPM.cs" />
+    <Compile Include="Classes\Mappings\OutOfLuckyBoxPopupPM.cs" />
+    <Compile Include="Classes\Mappings\OutOfSilverKeysPopupPM.cs" />
+    <Compile Include="Classes\Mappings\OutOfSwordsPopupPM.cs" />
+    <Compile Include="Classes\Mappings\PatchUpdatePM.cs" />
+    <Compile Include="Classes\Mappings\Popup1PM.cs" />
+    <Compile Include="Classes\Mappings\Popup2PM.cs" />
+    <Compile Include="Classes\Mappings\QuestCollectFailedPopupPM.cs" />
+    <Compile Include="Classes\Mappings\QuestPM.cs" />
+    <Compile Include="Classes\Mappings\QuestRewardsPopupPM.cs" />
+    <Compile Include="Classes\Mappings\QuestSelectPM.cs" />
+    <Compile Include="Classes\Mappings\RaidAlreadyEndedPopupPM.cs" />
+    <Compile Include="Classes\Mappings\RaidDragonPM.cs" />
+    <Compile Include="Classes\Mappings\RaidEndPM.cs" />
+    <Compile Include="Classes\Mappings\RaidFightPM.cs" />
+    <Compile Include="Classes\Mappings\RaidLobbyPM.cs" />
+    <Compile Include="Classes\Mappings\RaidOutOfKeysPopupPM.cs" />
+    <Compile Include="Classes\Mappings\RaidReadyPM.cs" />
+    <Compile Include="Classes\Mappings\RaidRewardFailedPopupPM.cs" />
+    <Compile Include="Classes\Mappings\RaidRewardPM.cs" />
+    <Compile Include="Classes\Mappings\RaidRewardPopupPM.cs" />
+    <Compile Include="Classes\Mappings\RaidStartPM.cs" />
+    <Compile Include="Classes\Mappings\SellHeroConfirmPopupPM.cs" />
+    <Compile Include="Classes\Mappings\SellItemConfirmPopupPM.cs" />
+    <Compile Include="Classes\Mappings\SellItemPopupPM.cs" />
+    <Compile Include="Classes\Mappings\SendHonorConfirmPopupPM.cs" />
+    <Compile Include="Classes\Mappings\SendHonorFailedPopupPM.cs" />
+    <Compile Include="Classes\Mappings\SendHonorFullPopupPM.cs" />
+    <Compile Include="Classes\Mappings\SendHonorSendingPopupPM.cs" />
+    <Compile Include="Classes\Mappings\SharedPM.cs" />
+    <Compile Include="Classes\Mappings\ShopBuyFailedPopupPM.cs" />
+    <Compile Include="Classes\Mappings\ShopBuyPopupPM.cs" />
+    <Compile Include="Classes\Mappings\ShopPM.cs" />
+    <Compile Include="Classes\Mappings\ShopPurchaseCompletePopupPM.cs" />
+    <Compile Include="Classes\Mappings\SocialSelectPM.cs" />
+    <Compile Include="Classes\Mappings\SpecialQuestPM.cs" />
+    <Compile Include="Classes\Mappings\TapToPlayPM.cs" />
+    <Compile Include="Classes\Mappings\TowerFightPM.cs" />
+    <Compile Include="Classes\Mappings\TowerLostPM.cs" />
+    <Compile Include="Classes\Mappings\TowerSelectPM.cs" />
+    <Compile Include="Classes\Mappings\TowerStartPM.cs" />
+    <Compile Include="Classes\Mappings\VictoryPM.cs" />
+    <Compile Include="Classes\Mappings\WifiWarningPopupPM.cs" />
+    <Compile Include="Classes\MappingType.cs" />
+    <Compile Include="Classes\Mastery.cs" />
+    <Compile Include="Classes\Objective.cs" />
+    <Compile Include="Classes\PixelMapping.cs" />
+    <Compile Include="Classes\ProfileComboBoxItem.cs" />
+    <Compile Include="Classes\ProgressArgs.cs" />
+    <Compile Include="Classes\ProgressType.cs" />
+    <Compile Include="Classes\Rect.cs" />
+    <Compile Include="Classes\ResourceType.cs" />
+    <Compile Include="Classes\Scene.cs" />
+    <Compile Include="Classes\SceneType.cs" />
+    <Compile Include="Classes\SevenKnightsCore.cs" />
+    <Compile Include="Classes\SkillType.cs" />
+    <Compile Include="Classes\SlimPushbullet.cs" />
+    <Compile Include="Classes\Team.cs" />
+    <Compile Include="Classes\Tesseractor.cs" />
+    <Compile Include="Classes\User32.cs" />
+    <Compile Include="Classes\Utility.cs" />
+    <Compile Include="Classes\World.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MinimizeCapture\WindowSnap.cs" />
+    <Compile Include="MinimizeCapture\WindowSnapCollection.cs" />
+    <Compile Include="MinimizeCapture\XPAppearance.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StageSequencerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StageSequencerForm.Designer.cs">
+      <DependentUpon>StageSequencerForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StageSequencerForm.resx">
+      <DependentUpon>StageSequencerForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\SevenKnights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\banner_main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\rachel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\rachel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="rachel.ico" />
+    <EmbeddedResource Include="Resources\Alien_AlarmDrum-KevanGC-893953959.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y "$(ProjectDir)\External Files\*" "$(TargetDir)"
+
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
