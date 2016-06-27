@@ -1997,23 +1997,28 @@
 			// RD_limitLabel
 			// 
 			this.RD_limitLabel.AutoSize = true;
+			this.RD_limitLabel.Enabled = false;
 			this.RD_limitLabel.Location = new System.Drawing.Point(407, 8);
 			this.RD_limitLabel.Name = "RD_limitLabel";
 			this.RD_limitLabel.Size = new System.Drawing.Size(70, 13);
 			this.RD_limitLabel.TabIndex = 25;
 			this.RD_limitLabel.Text = "times per visit";
+			this.RD_limitLabel.Visible = false;
 			// 
 			// RD_limitNumericBox
 			// 
+			this.RD_limitNumericBox.Enabled = false;
 			this.RD_limitNumericBox.Location = new System.Drawing.Point(365, 5);
 			this.RD_limitNumericBox.Name = "RD_limitNumericBox";
 			this.RD_limitNumericBox.Size = new System.Drawing.Size(37, 20);
 			this.RD_limitNumericBox.TabIndex = 24;
 			this.RD_limitNumericBox.Tag = "2";
+			this.RD_limitNumericBox.Visible = false;
 			this.RD_limitNumericBox.ValueChanged += new System.EventHandler(this.limitNumericBox_ValueChanged);
 			// 
 			// RD_limitCheckBox
 			// 
+			this.RD_limitCheckBox.Enabled = false;
 			this.RD_limitCheckBox.Location = new System.Drawing.Point(315, 7);
 			this.RD_limitCheckBox.Name = "RD_limitCheckBox";
 			this.RD_limitCheckBox.Size = new System.Drawing.Size(47, 17);
@@ -2021,6 +2026,7 @@
 			this.RD_limitCheckBox.Tag = "2";
 			this.RD_limitCheckBox.Text = "Limit";
 			this.RD_limitCheckBox.UseVisualStyleBackColor = true;
+			this.RD_limitCheckBox.Visible = false;
 			this.RD_limitCheckBox.CheckedChanged += new System.EventHandler(this.limitCheckBox_CheckedChanged);
 			// 
 			// RD_mainPanel
