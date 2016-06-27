@@ -46,3 +46,15 @@ C:\Users\lbrunton\Source\Repos\sevenknightsai\SevenKnightsAI\obj\x86\Release\Sev
 C:\Users\lbrunton\Source\Repos\sevenknightsai\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.pdb
 C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.exe
 C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.pdb
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\bin\Release\SevenKnightsAI.exe
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\bin\Release\SevenKnightsAI.pdb
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\bin\Release\AutoItX3.Assembly.dll
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\bin\Release\Newtonsoft.Json.dll
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\bin\Release\RestSharp.dll
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\bin\Release\Tesseract.dll
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.csprojResolveAssemblyReference.cache
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.MainForm.resources
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.Properties.Resources.resources
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.StageSequencerForm.resources
+C:\Users\lbrunton\Source\Repos\sevenknightsai-GH\SevenKnightsAI\obj\x86\Release\SevenKnightsAI.csproj.GenerateResource.Cache
