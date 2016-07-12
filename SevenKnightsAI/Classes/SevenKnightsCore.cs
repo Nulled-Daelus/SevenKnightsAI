@@ -5569,7 +5569,7 @@ namespace SevenKnightsAI.Classes
 				{
 					string text = page.GetText();
 					Utility.FilterAscii(text);
-					if (text.Length >= 2)
+					if (text.Length >= 5)
 					{
 						string s = text.Substring(0, 2);
 						string s2 = text.Substring(3, 2);
