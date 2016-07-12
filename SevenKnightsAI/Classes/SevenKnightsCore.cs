@@ -4439,8 +4439,8 @@ namespace SevenKnightsAI.Classes
 					Scene result = new Scene(SceneType.DISCONNECTED_POPUP);
 					return result;
 				}
-				if (this.MatchMapping(AdventureModesPM.BorderTopLeft, 2) &&
-					this.MatchMapping(AdventureModesPM.BorderBottomRight, 2) &&
+				if (this.MatchMapping(AdventureModesPM.BorderTopLeft, 7) &&
+					this.MatchMapping(AdventureModesPM.BorderBottomRight, 4) &&
 					this.MatchMapping(AdventureModesPM.KeyIcon, 4))
 				{
 					Scene result = new Scene(SceneType.ADVENTURE_MODES);
@@ -4472,7 +4472,7 @@ namespace SevenKnightsAI.Classes
 					return result;
 				}
 				if ((this.MatchMapping(BattleModesPM.BorderTopLeft, 2)) &&
-					(this.MatchMapping(BattleModesPM.BorderBottomRight, 2)) &&
+					(this.MatchMapping(BattleModesPM.BorderBottomRight, 3)) &&
 					this.MatchMapping(BattleModesPM.GoldPlusButton, 2)
 					)
 				{

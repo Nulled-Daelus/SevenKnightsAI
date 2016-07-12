@@ -860,7 +860,25 @@ namespace SevenKnightsAI
 			}
 		}
 
-		private void LG_scrollCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void LG_SaveScreen_Click(object sender, EventArgs e) {
+            Bitmap screen = this.AI.BlueStacks.CaptureFrame(!this.AIProfiles.ST_ForegroundMode);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.AddExtension = true;
+            saveFileDialog.DefaultExt = "bmp";
+            saveFileDialog.Filter = "Bitmap file (*.bmp)|*.bmp";
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            saveFileDialog.OverwritePrompt = true;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.SupportMultiDottedExtensions = false;
+            saveFileDialog.Title = "Save Screen As";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+                screen.Save(saveFileDialog.FileName);
+            }
+        }
+
+        private void LG_scrollCheckBox_CheckedChanged(object sender, EventArgs e)
 		{
 			CheckBox checkBox = sender as CheckBox;
 			bool @checked = checkBox.Checked;
@@ -1630,6 +1648,7 @@ namespace SevenKnightsAI
 			this.aiButton.Text = "Stop AI";
 			this.EnablePause(true);
 			this.LG_LogPixel.Enabled = true;
+            this.LG_SaveScreen.Enabled = true;
 			this.ST_toggleBlueStacksButton.Enabled = true;
 		}
 
@@ -1640,6 +1659,7 @@ namespace SevenKnightsAI
 				this.Worker.CancelAsync();
 				this.EnablePause(false);
 				this.LG_LogPixel.Enabled = false;
+                this.LG_SaveScreen.Enabled = false;
 				this.profileToolStripLabel.Text = string.Empty;
 				this.AIProfiles.TMP_Paused = false;
 				this.AIProfiles.TMP_WaitingForKeys = false;
@@ -1683,6 +1703,6 @@ namespace SevenKnightsAI
 			this.profileToolStripLabel.Text = string.Format("[Profile: {0}]", this.AIProfiles.CurrentProfileName);
 		}
 
-		#endregion Private Methods
-	}
+        #endregion Private Methods
+    }
 }
