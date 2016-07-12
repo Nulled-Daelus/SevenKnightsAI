@@ -16,18 +16,18 @@ namespace SevenKnightsAI.Classes.Mappings
 
 		public static readonly PixelMapping BorderBottomRight = new PixelMapping
 		{
-			X = 297,
-			Y = 203,
-			Color = 4618634,
-			Type = MappingType.ANCHOR
+            X = 296,
+            Y = 229,
+            Color = 13353918,
+            Type = MappingType.ANCHOR
 		};
 
 		public static readonly PixelMapping BorderTopLeft = new PixelMapping
 		{
-			X = 205,
-			Y = 127,
-			Color = 4396809,
-			Type = MappingType.ANCHOR
+            X = 151,
+            Y = 211,
+            Color = 8595770,
+            Type = MappingType.ANCHOR
 		};
 
 		public static readonly PixelMapping CelestialTowerButton = new PixelMapping
