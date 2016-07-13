@@ -50,7 +50,7 @@ namespace SevenKnightsAI.Classes.Mappings
 			Type = MappingType.BUTTON
 		};
 
-		public static readonly int HONOR_OFFSET_X = 0;
+		public static readonly int HONOR_OFFSET_X = 10;
 
 		public static readonly int HONOR_OFFSET_Y = 0;
 
@@ -170,7 +170,7 @@ namespace SevenKnightsAI.Classes.Mappings
 			Type = MappingType.BUTTON
 		};
 
-		public static readonly int RUBY_OFFSET_X = 0;
+		public static readonly int RUBY_OFFSET_X = 10;
 
 		public static readonly int RUBY_OFFSET_Y = 0;
 
