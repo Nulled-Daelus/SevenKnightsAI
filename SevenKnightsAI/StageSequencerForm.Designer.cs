@@ -114,7 +114,8 @@
             "6 - Frozen Land",
             "7 - Revenger\'s Hell",
             "8 - Moonlit Isle",
-            "9 - Western Emperors Land"});
+            "9 - Western Emperors Land",
+            "10 - Sage Peak"});
             this.World.MinimumWidth = 127;
             this.World.Name = "World";
             this.World.Width = 127;

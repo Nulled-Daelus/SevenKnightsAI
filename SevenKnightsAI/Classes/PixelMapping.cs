@@ -1,9 +1,7 @@
-﻿using System;
-
-namespace SevenKnightsAI.Classes
+﻿namespace SevenKnightsAI.Classes
 {
-	internal struct PixelMapping
-	{
+    internal struct PixelMapping
+    {
         public int Color;
         public bool Log;
         public MappingType Type;

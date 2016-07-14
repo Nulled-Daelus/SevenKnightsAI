@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace SevenKnightsAI.Classes
+﻿namespace SevenKnightsAI.Classes
 {
-	internal enum MappingType
-	{
-		ANCHOR,
-		BUTTON,
-		BOTH
-	}
+    internal enum MappingType
+    {
+        ANCHOR,
+        BUTTON,
+        BOTH
+    }
 }

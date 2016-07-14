@@ -1,17 +1,15 @@
-﻿using System;
-
-namespace SevenKnightsAI.Classes
+﻿namespace SevenKnightsAI.Classes
 {
-	internal enum ProgressType
-	{
-		OBJECTIVE,
-		EVENT,
-		ERROR,
-		WARNING,
-		COUNT,
-		KEY,
-		RESOURCE,
-		CURSORPOS,
-		Alert
-	}
+    internal enum ProgressType
+    {
+        OBJECTIVE,
+        EVENT,
+        ERROR,
+        WARNING,
+        COUNT,
+        KEY,
+        RESOURCE,
+        CURSORPOS,
+        Alert
+    }
 }
