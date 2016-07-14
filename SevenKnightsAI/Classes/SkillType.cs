@@ -1,15 +1,11 @@
-﻿using System;
-
-namespace SevenKnightsAI.Classes
+﻿namespace SevenKnightsAI.Classes
 {
-	
-	public enum SkillType
-	{
-		
-		Auto,
-		
-		Manual,
-		
-		Both
-	}
+    public enum SkillType
+    {
+        Auto,
+
+        Manual,
+
+        Both
+    }
 }
