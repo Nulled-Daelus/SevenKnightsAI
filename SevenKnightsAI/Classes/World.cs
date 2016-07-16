@@ -12,8 +12,9 @@ namespace SevenKnightsAI.Classes
 		DarkGrave,
 		DragonRuins,
 		FrozenLand,
-		RevengersHell,
+		Purgatory,
 		MoonlitIsle,
-        WesternEmperorsLand
+		WesternEmpire,
+		EasternEmpire
 	}
 }
