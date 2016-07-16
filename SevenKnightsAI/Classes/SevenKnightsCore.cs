@@ -4943,16 +4943,16 @@ namespace SevenKnightsAI.Classes
 					MapSelectPM.World9_3Anchor_1,
 					MapSelectPM.World9_3Anchor_2
 				},
-                new PixelMapping[]
-                {
-                    MapSelectPM.World10_1Anchor_1,
-                    MapSelectPM.World10_1Anchor_2
-                },
-                new PixelMapping[]
-                {
-                    MapSelectPM.World10_2Anchor_1,
-                    MapSelectPM.World10_2Anchor_2
-                }
+				new PixelMapping[]
+				{
+					MapSelectPM.World10_1Anchor_1,
+					MapSelectPM.World10_1Anchor_2
+				},
+				new PixelMapping[]
+				{
+					MapSelectPM.World10_2Anchor_1,
+					MapSelectPM.World10_2Anchor_2
+				}
 			};
 			PixelMapping[][] stages = new PixelMapping[][]
 			{
@@ -4997,19 +4997,19 @@ namespace SevenKnightsAI.Classes
 					MapSelectPM.World9_3Stage14,
 					MapSelectPM.World9_3Stage15
 				},
-                new PixelMapping[]
-                {
-                    MapSelectPM.World10_1Stage1,
-                    MapSelectPM.World10_1Stage2,
-                    MapSelectPM.World10_1Stage3,
-                    MapSelectPM.World10_1Stage4,
-                    MapSelectPM.World10_1Stage5,
-                    MapSelectPM.World10_2Stage6,
-                    MapSelectPM.World10_2Stage7,
-                    MapSelectPM.World10_2Stage8,
-                    MapSelectPM.World10_2Stage9,
-                    MapSelectPM.World10_2Stage10
-                }
+				new PixelMapping[]
+				{
+					MapSelectPM.World10_1Stage1,
+					MapSelectPM.World10_1Stage2,
+					MapSelectPM.World10_1Stage3,
+					MapSelectPM.World10_1Stage4,
+					MapSelectPM.World10_1Stage5,
+					MapSelectPM.World10_2Stage6,
+					MapSelectPM.World10_2Stage7,
+					MapSelectPM.World10_2Stage8,
+					MapSelectPM.World10_2Stage9,
+					MapSelectPM.World10_2Stage10
+				}
 			};
 			int pageDestIndex = array.Length + 1;
 
@@ -5019,10 +5019,10 @@ namespace SevenKnightsAI.Classes
 				return;
 			}
 
-            PixelMapping stageMapping;
+			PixelMapping stageMapping;
 			if (world == World.MoonlitIsle)
 			{
-                stageMapping = stages[0][stage];
+				stageMapping = stages[0][stage];
 				if (stage < 5)
 				{
 					pageDestIndex = 0;
@@ -5056,22 +5056,22 @@ namespace SevenKnightsAI.Classes
 					pageDestIndex = 6;
 				}
 			}
-            else if (world == World.EasternEmpire)
-            {
-                stageMapping = stages[2][stage];
-                if (stage < 5)
-                {
-                    pageDestIndex = 7;
-                }
-                else if (stage < 10)
-                {
-                    pageDestIndex = 8;
-                }
-            }
-            else
-            {
-                return;
-            }
+			else if (world == World.EasternEmpire)
+			{
+				stageMapping = stages[2][stage];
+				if (stage < 5)
+				{
+					pageDestIndex = 7;
+				}
+				else if (stage < 10)
+				{
+					pageDestIndex = 8;
+				}
+			}
+			else
+			{
+				return;
+			}
 
 			this.SelectStage(array, stageMapping, pageDestIndex);
 		}

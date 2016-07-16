@@ -146,11 +146,11 @@ namespace SevenKnightsAI
 			this.AISettings.AD_Continuous = checkBox.Checked;
 		}
 
-        private void AD_difficultyComboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            ComboBox comboBox = sender as ComboBox;
-            this.AISettings.AD_Difficulty = comboBox.SelectedValue as Difficulty? ?? Difficulty.None;
-        }
+		private void AD_difficultyComboBox_SelectedValueChanged(object sender, EventArgs e)
+		{
+			ComboBox comboBox = sender as ComboBox;
+			this.AISettings.AD_Difficulty = comboBox.SelectedValue as Difficulty? ?? Difficulty.None;
+		}
 
 		private void AD_elementHeroesCheckBox_CheckedChanged(object sender, EventArgs e)
 		{
@@ -184,32 +184,32 @@ namespace SevenKnightsAI
 			this.AD_stageComboBox.SelectedIndex = selectedIndex;
 		}
 
-        private void AD_PopulateDifficulty(params Difficulty[] enabledDifficulties)
-        {
-            Dictionary<Difficulty, string> items = new Dictionary<Difficulty, string>();
+		private void AD_PopulateDifficulty(params Difficulty[] enabledDifficulties)
+		{
+			Dictionary<Difficulty, string> items = new Dictionary<Difficulty, string>();
 
-            List<Difficulty> difficulties = new List<Difficulty>(enabledDifficulties);
-            if (difficulties.Contains(Difficulty.None))
-                items.Add(Difficulty.None, "---");
-            if (difficulties.Contains(Difficulty.Easy))
-                items.Add(Difficulty.Easy, Difficulty.Easy.ToString());
-            if (difficulties.Contains(Difficulty.Normal))
-                items.Add(Difficulty.Normal, Difficulty.Normal.ToString());
-            if (difficulties.Contains(Difficulty.Hard))
-                items.Add(Difficulty.Hard, Difficulty.Hard.ToString());
+			List<Difficulty> difficulties = new List<Difficulty>(enabledDifficulties);
+			if (difficulties.Contains(Difficulty.None))
+				items.Add(Difficulty.None, "---");
+			if (difficulties.Contains(Difficulty.Easy))
+				items.Add(Difficulty.Easy, Difficulty.Easy.ToString());
+			if (difficulties.Contains(Difficulty.Normal))
+				items.Add(Difficulty.Normal, Difficulty.Normal.ToString());
+			if (difficulties.Contains(Difficulty.Hard))
+				items.Add(Difficulty.Hard, Difficulty.Hard.ToString());
 
-            Difficulty selectedDifficulty = this.AD_difficultyComboBox.SelectedValue as Difficulty? ?? Difficulty.None;
-            if (!difficulties.Contains(selectedDifficulty))
-                selectedDifficulty = Difficulty.None;
+			Difficulty selectedDifficulty = this.AD_difficultyComboBox.SelectedValue as Difficulty? ?? Difficulty.None;
+			if (!difficulties.Contains(selectedDifficulty))
+				selectedDifficulty = Difficulty.None;
 
-            this.AD_difficultyComboBox.SelectedValueChanged -= this.AD_difficultyComboBox_SelectedValueChanged;
-            this.AD_difficultyComboBox.DisplayMember = "Value";
-            this.AD_difficultyComboBox.ValueMember = "Key";
-            this.AD_difficultyComboBox.DataSource = new BindingSource(items, null);
-            this.AD_difficultyComboBox.SelectedValueChanged += this.AD_difficultyComboBox_SelectedValueChanged;
+			this.AD_difficultyComboBox.SelectedValueChanged -= this.AD_difficultyComboBox_SelectedValueChanged;
+			this.AD_difficultyComboBox.DisplayMember = "Value";
+			this.AD_difficultyComboBox.ValueMember = "Key";
+			this.AD_difficultyComboBox.DataSource = new BindingSource(items, null);
+			this.AD_difficultyComboBox.SelectedValueChanged += this.AD_difficultyComboBox_SelectedValueChanged;
 
-            this.AD_difficultyComboBox.SelectedValue = selectedDifficulty;
-        }
+			this.AD_difficultyComboBox.SelectedValue = selectedDifficulty;
+		}
 
         private void AD_posCheckBox_CheckedChanged(object sender, EventArgs e)
 		{
@@ -280,22 +280,22 @@ namespace SevenKnightsAI
 			{
 				this.AD_PopulateStage(15);
 			}
-            else if (this.AISettings.AD_World == World.EasternEmpire)
-            {
-                this.AD_PopulateStage(10);
-            }
+			else if (this.AISettings.AD_World == World.EasternEmpire)
+			{
+				this.AD_PopulateStage(10);
+			}
 			else
 			{
 				this.AD_PopulateStage(10);
 			}
-            if (this.AISettings.AD_World == World.MoonlitIsle || this.AISettings.AD_World == World.WesternEmpire || this.AISettings.AD_World == World.EasternEmpire)
-            {
-                this.AD_PopulateDifficulty(Difficulty.None, Difficulty.Easy, Difficulty.Normal);
-            }
-            else
-            {
-                this.AD_PopulateDifficulty(Difficulty.None, Difficulty.Easy, Difficulty.Normal, Difficulty.Hard);
-            }
+			if (this.AISettings.AD_World == World.MoonlitIsle || this.AISettings.AD_World == World.WesternEmpire || this.AISettings.AD_World == World.EasternEmpire)
+			{
+				this.AD_PopulateDifficulty(Difficulty.None, Difficulty.Easy, Difficulty.Normal);
+			}
+			else
+			{
+				this.AD_PopulateDifficulty(Difficulty.None, Difficulty.Easy, Difficulty.Normal, Difficulty.Hard);
+			}
 			if (this.loaded && this.AISettings.AD_World == World.Sequencer)
 			{
 				this.AD_ShowSequencerForm();
@@ -659,8 +659,8 @@ namespace SevenKnightsAI
 			this.AD_limitNumericBox.Value = this.AISettings.AD_Limit;
 			this.AD_worldComboBox.SelectedIndex = (int)this.AISettings.AD_World;
 			this.AD_stageComboBox.SelectedIndex = this.AISettings.AD_Stage;
-            this.AD_difficultyComboBox.SelectedValue = this.AISettings.AD_Difficulty;
-            this.AD_teamComboBox.SelectedIndex = (int)this.AISettings.AD_Team;
+			this.AD_difficultyComboBox.SelectedValue = this.AISettings.AD_Difficulty;
+			this.AD_teamComboBox.SelectedIndex = (int)this.AISettings.AD_Team;
 			this.AD_formationComboBox.SelectedIndex = (int)this.AISettings.AD_Formation;
 			this.AD_continuousCheckBox.Checked = this.AISettings.AD_Continuous;
 			this.AD_elementHeroesCheckBox.Checked = this.AISettings.AD_ElementHeroesOnly;

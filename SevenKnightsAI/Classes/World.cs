@@ -14,7 +14,7 @@ namespace SevenKnightsAI.Classes
 		FrozenLand,
 		Purgatory,
 		MoonlitIsle,
-        WesternEmpire,
-        EasternEmpire
+		WesternEmpire,
+		EasternEmpire
 	}
 }
