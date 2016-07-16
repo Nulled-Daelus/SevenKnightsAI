@@ -2122,21 +2122,21 @@ namespace SevenKnightsAI.Classes
 													world = worldStageFromSequencer.Item1;
 													stage = worldStageFromSequencer.Item2;
 												}
-												if (world == World.MoonlitIsle || world == World.WesternEmperorsLand)
+												if (world == World.MoonlitIsle || world == World.WesternEmpire || world == World.EasternEmpire)
 												{
 													if (this.MatchMapping(MapSelectPM.DifficultyBoxBorderLeft, 2) && this.MatchMapping(MapSelectPM.DifficultyBoxBorderRight, 2))
 													{
 														this.WeightedClick(MapSelectPM.ContinentButton, 1.0, 1.0, 1, 0, "left");
-														SevenKnightsCore.Sleep(500);
+														SevenKnightsCore.Sleep(1000);
 													}
-													this.SelectStageMoonlitIsle(world, stage);
+													this.SelectStageAisha(world, stage);
 												}
 												else
 												{
 													if (!this.MatchMapping(MapSelectPM.DifficultyBoxBorderLeft, 2) && !this.MatchMapping(MapSelectPM.DifficultyBoxBorderRight, 2))
 													{
 														this.WeightedClick(MapSelectPM.ContinentButton, 1.0, 1.0, 1, 0, "left");
-														SevenKnightsCore.Sleep(500);
+														SevenKnightsCore.Sleep(1000);
 													}
 													this.SelectStageAsgar(world, stage);
 												}
@@ -4904,7 +4904,7 @@ namespace SevenKnightsAI.Classes
 			this.SelectStage(anchorMappings, stageMapping, num);
 		}
 
-		private void SelectStageMoonlitIsle(World world, int stage)
+		private void SelectStageAisha(World world, int stage)
 		{
 			PixelMapping[][] array = new PixelMapping[][]
 			{
@@ -4942,7 +4942,17 @@ namespace SevenKnightsAI.Classes
 				{
 					MapSelectPM.World9_3Anchor_1,
 					MapSelectPM.World9_3Anchor_2
-				}
+				},
+                new PixelMapping[]
+                {
+                    MapSelectPM.World10_1Anchor_1,
+                    MapSelectPM.World10_1Anchor_2
+                },
+                new PixelMapping[]
+                {
+                    MapSelectPM.World10_2Anchor_1,
+                    MapSelectPM.World10_2Anchor_2
+                }
 			};
 			PixelMapping[][] stages = new PixelMapping[][]
 			{
@@ -4986,18 +4996,33 @@ namespace SevenKnightsAI.Classes
 					MapSelectPM.World9_3Stage13,
 					MapSelectPM.World9_3Stage14,
 					MapSelectPM.World9_3Stage15
-				}
+				},
+                new PixelMapping[]
+                {
+                    MapSelectPM.World10_1Stage1,
+                    MapSelectPM.World10_1Stage2,
+                    MapSelectPM.World10_1Stage3,
+                    MapSelectPM.World10_1Stage4,
+                    MapSelectPM.World10_1Stage5,
+                    MapSelectPM.World10_2Stage6,
+                    MapSelectPM.World10_2Stage7,
+                    MapSelectPM.World10_2Stage8,
+                    MapSelectPM.World10_2Stage9,
+                    MapSelectPM.World10_2Stage10
+                }
 			};
 			int pageDestIndex = array.Length + 1;
-			PixelMapping stageMapping = stages[0][stage];
 
 			if (world == World.None)
 			{
 				this.WeightedClick(MapSelectPM.QuickStartButton, 1.0, 1.0, 1, 0, "left");
 				return;
 			}
-			else if (world == World.MoonlitIsle)
+
+            PixelMapping stageMapping;
+			if (world == World.MoonlitIsle)
 			{
+                stageMapping = stages[0][stage];
 				if (stage < 5)
 				{
 					pageDestIndex = 0;
@@ -5015,7 +5040,7 @@ namespace SevenKnightsAI.Classes
 					pageDestIndex = 3;
 				}
 			}
-			else if (world == World.WesternEmperorsLand)
+			else if (world == World.WesternEmpire)
 			{
 				stageMapping = stages[1][stage];
 				if (stage < 5)
@@ -5030,12 +5055,24 @@ namespace SevenKnightsAI.Classes
 				{
 					pageDestIndex = 6;
 				}
-				//else if (stage < 20)
-				//{
-				//    pageDestIndex = 7;
-				//}
-				//pageDestIndex = 4;
 			}
+            else if (world == World.EasternEmpire)
+            {
+                stageMapping = stages[2][stage];
+                if (stage < 5)
+                {
+                    pageDestIndex = 7;
+                }
+                else if (stage < 10)
+                {
+                    pageDestIndex = 8;
+                }
+            }
+            else
+            {
+                return;
+            }
+
 			this.SelectStage(array, stageMapping, pageDestIndex);
 		}
 

@@ -475,10 +475,10 @@
             // 
             // AD_sequenceButton
             // 
-            this.AD_sequenceButton.Location = new System.Drawing.Point(132, 57);
+            this.AD_sequenceButton.Location = new System.Drawing.Point(132, 30);
             this.AD_sequenceButton.Name = "AD_sequenceButton";
             this.AD_sequenceButton.Size = new System.Drawing.Size(69, 23);
-            this.AD_sequenceButton.TabIndex = 24;
+            this.AD_sequenceButton.TabIndex = 4;
             this.AD_sequenceButton.Text = "Sequence";
             this.AD_sequenceButton.UseVisualStyleBackColor = true;
             this.AD_sequenceButton.Click += new System.EventHandler(this.AD_sequenceButton_Click);
@@ -489,7 +489,7 @@
             this.AD_elementHeroesCheckBox.Location = new System.Drawing.Point(74, 251);
             this.AD_elementHeroesCheckBox.Name = "AD_elementHeroesCheckBox";
             this.AD_elementHeroesCheckBox.Size = new System.Drawing.Size(121, 17);
-            this.AD_elementHeroesCheckBox.TabIndex = 23;
+            this.AD_elementHeroesCheckBox.TabIndex = 13;
             this.AD_elementHeroesCheckBox.Text = "Element heroes only";
             this.AD_elementHeroesCheckBox.UseVisualStyleBackColor = true;
             this.AD_elementHeroesCheckBox.CheckedChanged += new System.EventHandler(this.AD_elementHeroesCheckBox_CheckedChanged);
@@ -497,10 +497,10 @@
             // AD_continuousCheckBox
             // 
             this.AD_continuousCheckBox.AutoSize = true;
-            this.AD_continuousCheckBox.Location = new System.Drawing.Point(74, 84);
+            this.AD_continuousCheckBox.Location = new System.Drawing.Point(74, 57);
             this.AD_continuousCheckBox.Name = "AD_continuousCheckBox";
             this.AD_continuousCheckBox.Size = new System.Drawing.Size(128, 17);
-            this.AD_continuousCheckBox.TabIndex = 22;
+            this.AD_continuousCheckBox.TabIndex = 5;
             this.AD_continuousCheckBox.Text = "Progress to next zone";
             this.AD_continuousCheckBox.UseVisualStyleBackColor = true;
             this.AD_continuousCheckBox.CheckedChanged += new System.EventHandler(this.AD_continuousCheckBox_CheckedChanged);
@@ -526,7 +526,7 @@
             this.AD_formationComboBox.Location = new System.Drawing.Point(74, 133);
             this.AD_formationComboBox.Name = "AD_formationComboBox";
             this.AD_formationComboBox.Size = new System.Drawing.Size(127, 21);
-            this.AD_formationComboBox.TabIndex = 6;
+            this.AD_formationComboBox.TabIndex = 11;
             this.AD_formationComboBox.Tag = "0";
             this.AD_formationComboBox.SelectedIndexChanged += new System.EventHandler(this.formationComboBox_SelectedIndexChanged);
             // 
@@ -542,7 +542,7 @@
             this.AD_teamComboBox.Location = new System.Drawing.Point(74, 106);
             this.AD_teamComboBox.Name = "AD_teamComboBox";
             this.AD_teamComboBox.Size = new System.Drawing.Size(52, 21);
-            this.AD_teamComboBox.TabIndex = 5;
+            this.AD_teamComboBox.TabIndex = 9;
             this.AD_teamComboBox.Tag = "0";
             this.AD_teamComboBox.SelectedIndexChanged += new System.EventHandler(this.teamComboBox_SelectedIndexChanged);
             // 
@@ -561,10 +561,10 @@
             "8",
             "9",
             "10"});
-            this.AD_stageComboBox.Location = new System.Drawing.Point(74, 58);
+            this.AD_stageComboBox.Location = new System.Drawing.Point(74, 31);
             this.AD_stageComboBox.Name = "AD_stageComboBox";
             this.AD_stageComboBox.Size = new System.Drawing.Size(52, 21);
-            this.AD_stageComboBox.TabIndex = 4;
+            this.AD_stageComboBox.TabIndex = 3;
             this.AD_stageComboBox.SelectedIndexChanged += new System.EventHandler(this.AD_stageComboBox_SelectedIndexChanged);
             // 
             // AD_worldComboBox
@@ -580,13 +580,14 @@
             "4 - Dark Grave",
             "5 - Dragon Ruins",
             "6 - Frozen Land",
-            "7 - Revenger\'s Hell",
+            "7 - Purgatory",
             "8 - Moonlit Isle",
-            "9 - Western Emperors Land"});
-            this.AD_worldComboBox.Location = new System.Drawing.Point(74, 31);
+            "9 - Western Empire",
+            "10 - Eastern Empire"});
+            this.AD_worldComboBox.Location = new System.Drawing.Point(74, 4);
             this.AD_worldComboBox.Name = "AD_worldComboBox";
             this.AD_worldComboBox.Size = new System.Drawing.Size(127, 21);
-            this.AD_worldComboBox.TabIndex = 3;
+            this.AD_worldComboBox.TabIndex = 1;
             this.AD_worldComboBox.SelectedIndexChanged += new System.EventHandler(this.AD_worldComboBox_SelectedIndexChanged);
             // 
             // AD_formationPanel
@@ -601,7 +602,7 @@
             this.AD_formationPanel.Location = new System.Drawing.Point(74, 160);
             this.AD_formationPanel.Name = "AD_formationPanel";
             this.AD_formationPanel.Size = new System.Drawing.Size(80, 85);
-            this.AD_formationPanel.TabIndex = 19;
+            this.AD_formationPanel.TabIndex = 12;
             this.AD_formationPanel.Tag = "0";
             // 
             // AD_pos5CheckBox
@@ -669,7 +670,7 @@
             this.AD_formationLabel.Location = new System.Drawing.Point(5, 136);
             this.AD_formationLabel.Name = "AD_formationLabel";
             this.AD_formationLabel.Size = new System.Drawing.Size(62, 13);
-            this.AD_formationLabel.TabIndex = 18;
+            this.AD_formationLabel.TabIndex = 10;
             this.AD_formationLabel.Text = "Formation";
             // 
             // AD_teamLabel
@@ -677,23 +678,23 @@
             this.AD_teamLabel.Location = new System.Drawing.Point(5, 109);
             this.AD_teamLabel.Name = "AD_teamLabel";
             this.AD_teamLabel.Size = new System.Drawing.Size(62, 13);
-            this.AD_teamLabel.TabIndex = 17;
+            this.AD_teamLabel.TabIndex = 8;
             this.AD_teamLabel.Text = "Team";
             // 
             // AD_stageLabel
             // 
-            this.AD_stageLabel.Location = new System.Drawing.Point(5, 61);
+            this.AD_stageLabel.Location = new System.Drawing.Point(5, 34);
             this.AD_stageLabel.Name = "AD_stageLabel";
             this.AD_stageLabel.Size = new System.Drawing.Size(62, 13);
-            this.AD_stageLabel.TabIndex = 16;
+            this.AD_stageLabel.TabIndex = 2;
             this.AD_stageLabel.Text = "Stage";
             // 
             // AD_worldLabel
             // 
-            this.AD_worldLabel.Location = new System.Drawing.Point(5, 34);
+            this.AD_worldLabel.Location = new System.Drawing.Point(5, 7);
             this.AD_worldLabel.Name = "AD_worldLabel";
             this.AD_worldLabel.Size = new System.Drawing.Size(62, 13);
-            this.AD_worldLabel.TabIndex = 15;
+            this.AD_worldLabel.TabIndex = 0;
             this.AD_worldLabel.Text = "World";
             // 
             // AD_difficultyComboBox
@@ -705,12 +706,12 @@
             "Easy",
             "Normal",
             "Hard"});
-            this.AD_difficultyComboBox.Location = new System.Drawing.Point(74, 4);
+            this.AD_difficultyComboBox.Location = new System.Drawing.Point(74, 80);
             this.AD_difficultyComboBox.MaxDropDownItems = 3;
             this.AD_difficultyComboBox.Name = "AD_difficultyComboBox";
             this.AD_difficultyComboBox.Size = new System.Drawing.Size(79, 21);
-            this.AD_difficultyComboBox.TabIndex = 2;
-            this.AD_difficultyComboBox.SelectedIndexChanged += new System.EventHandler(this.AD_difficultyComboBox_SelectedIndexChanged);
+            this.AD_difficultyComboBox.TabIndex = 7;
+            this.AD_difficultyComboBox.SelectedValueChanged += new System.EventHandler(this.AD_difficultyComboBox_SelectedValueChanged);
             // 
             // AD_skillGroupBox
             // 
@@ -725,7 +726,7 @@
             this.AD_skillGroupBox.Location = new System.Drawing.Point(228, 5);
             this.AD_skillGroupBox.Name = "AD_skillGroupBox";
             this.AD_skillGroupBox.Size = new System.Drawing.Size(254, 252);
-            this.AD_skillGroupBox.TabIndex = 13;
+            this.AD_skillGroupBox.TabIndex = 14;
             this.AD_skillGroupBox.TabStop = false;
             this.AD_skillGroupBox.Tag = "0";
             this.AD_skillGroupBox.Text = "Skill Management";
@@ -1248,10 +1249,10 @@
             // 
             // AD_difficultyLabel
             // 
-            this.AD_difficultyLabel.Location = new System.Drawing.Point(5, 7);
+            this.AD_difficultyLabel.Location = new System.Drawing.Point(6, 83);
             this.AD_difficultyLabel.Name = "AD_difficultyLabel";
             this.AD_difficultyLabel.Size = new System.Drawing.Size(62, 13);
-            this.AD_difficultyLabel.TabIndex = 12;
+            this.AD_difficultyLabel.TabIndex = 6;
             this.AD_difficultyLabel.Text = "Difficulty";
             // 
             // AD_enableCheckBox
