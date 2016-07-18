@@ -4295,7 +4295,7 @@ namespace SevenKnightsAI.Classes
 					Scene result = new Scene(SceneType.ADVENTURE_FIGHT);
 					return result;
 				}
-				if (this.ExpectedFightScene(SceneType.RAID_FIGHT) && this.MatchMapping(SharedPM.Fight_PauseButton, 2) && this.MatchMapping(SharedPM.Fight_ChatButton, 2) && this.MatchMapping(RaidFightPM.DragonIcon, 2))
+				if (this.ExpectedFightScene(SceneType.RAID_FIGHT) && this.MatchMapping(TowerFightPM.PauseButton, 2) && this.MatchMapping(TowerFightPM.ChatButton, 2) && this.MatchMapping(RaidFightPM.DragonIcon, 2))
 				{
 					Scene result = new Scene(SceneType.RAID_FIGHT);
 					return result;
