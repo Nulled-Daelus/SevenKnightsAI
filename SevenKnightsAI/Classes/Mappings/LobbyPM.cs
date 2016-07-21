@@ -138,23 +138,23 @@ namespace SevenKnightsAI.Classes.Mappings
 			Type = MappingType.BUTTON
 		};
 
-		public static readonly PixelMapping MenuButtonYellowLeft = new PixelMapping
-		{
-			X = 880,
-			Y = 14,
-			Color = 16303137,
-			Type = MappingType.ANCHOR
-		};
+        public static readonly PixelMapping MenuButtonYellowLeft = new PixelMapping
+        {
+            X = 883,
+            Y = 27,
+            Color = 13610070,
+            Type = MappingType.ANCHOR
+        };
 
-		public static readonly PixelMapping MenuButtonYellowRight = new PixelMapping
-		{
-			X = 888,
-			Y = 21,
-			Color = 16761889,
-			Type = MappingType.ANCHOR
-		};
+        public static readonly PixelMapping MenuButtonYellowRight = new PixelMapping
+        {
+            X = 915,
+            Y = 28,
+            Color = 10189117,
+            Type = MappingType.ANCHOR
+        };
 
-		public static readonly PixelMapping QuestAvailable = new PixelMapping
+        public static readonly PixelMapping QuestAvailable = new PixelMapping
 		{
 			X = 95,
 			Y = 457,
