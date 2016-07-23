@@ -81,6 +81,7 @@
     <Compile Include="Classes\HotTimeHelper.cs" />
     <Compile Include="Classes\Imaging\ImageHashing.cs" />
     <Compile Include="Classes\Imaging\LockBitmap.cs" />
+    <Compile Include="Classes\Mappings\AdsClosePM.cs" />
     <Compile Include="Classes\Mappings\AdsPM.cs" />
     <Compile Include="Classes\Mappings\AdventureFightPM.cs" />
     <Compile Include="Classes\Mappings\AdventureLootGoldPM.cs" />
