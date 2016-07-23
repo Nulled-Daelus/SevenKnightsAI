@@ -636,7 +636,7 @@ namespace SevenKnightsAI.Classes.Mappings
         {
             X = 70,
             Y = 11,
-            Width = 38,
+            Width = 60,
             Height = 19
         };
 
