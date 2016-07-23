@@ -635,9 +635,9 @@ namespace SevenKnightsAI.Classes.Mappings
         public static readonly Rectangle R_KeyOnTopTimeBase = new Rectangle
         {
             X = 70,
-            Y = 11,
-            Width = 38,
-            Height = 19
+            Y = 19,
+            Width = 60,
+            Height = 21
         };
 
         public static readonly Rectangle R_RubyBase = new Rectangle
