@@ -3639,7 +3639,7 @@ namespace SevenKnightsAI.Classes
             using (Bitmap bitmap = this.CropFrame(this.BlueStacks.MainWindowAS.CurrentFrame, rect).ScaleByPercent(128))
             {
 #if DEBUG
-				bitmap.Save("keys.png");
+				bitmap.Save("keysOnTop.png");
 #endif
                 using (Page page = this.Tesseractor.Engine.Process(bitmap, null))
                 {
@@ -3648,7 +3648,7 @@ namespace SevenKnightsAI.Classes
                     {
                         int.TryParse(text.Substring(1), out num);
 #if DEBUG
-                        this.Log("int: " + num + "  text: " + text);
+                        this.Log("int: " + num + "  text: " + text.Trim());
 #endif
                     }
                 }
@@ -3660,10 +3660,17 @@ namespace SevenKnightsAI.Classes
                 rect.Y += offsetY;
                 using (Bitmap bitmap2 = this.CropFrame(this.BlueStacks.MainWindowAS.CurrentFrame, rect))
                 {
+#if DEBUG
+                    bitmap2.Save("r_timebase.png");
+#endif
                     using (Page page2 = this.Tesseractor.Engine.Process(bitmap2, null))
                     {
                         string text2 = page2.GetText();
                         Utility.FilterAscii(text2);
+#if DEBUG
+                       this.Log("r_timebase txt = "+text2.Trim());
+                       this.Log("r_timebase txt.length = " + text2.Length);
+#endif
                         if (text2.Length >= 2)
                         {
                             string s = text2.Substring(0, 2);
@@ -3674,6 +3681,7 @@ namespace SevenKnightsAI.Classes
                             int.TryParse(s2, out seconds);
                             TimeSpan adventureKeyTime = new TimeSpan(0, minutes, seconds);
                             this.AdventureKeyTime = adventureKeyTime;
+                            return num;
                         }
                         else
                         {
@@ -3681,7 +3689,6 @@ namespace SevenKnightsAI.Classes
                             this.AdventureKeyTime = TimeSpan.MaxValue;
                         }
                     }
-                    return num;
                 }
             }
             rect = SharedPM.R_KeyNormalBase;
@@ -3689,6 +3696,9 @@ namespace SevenKnightsAI.Classes
             rect.Y += offsetY;
             using (Bitmap bitmap3 = this.CropFrame(this.BlueStacks.MainWindowAS.CurrentFrame, rect))
             {
+#if DEBUG
+                bitmap3.Save("r_normalbase.png");
+#endif
                 using (Page page3 = this.Tesseractor.Engine.Process(bitmap3, null))
                 {
                     string text3 = page3.GetText();

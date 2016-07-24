@@ -777,7 +777,7 @@ namespace SevenKnightsAI.Classes.Mappings
 			Type = MappingType.ANCHOR
 		};
 
-		public static readonly int KEY_OFFSET_X = 323;
+		public static readonly int KEY_OFFSET_X = 353;
 
 		public static readonly int KEY_OFFSET_Y = 0;
 
