@@ -5647,10 +5647,7 @@ namespace SevenKnightsAI.Classes
                     {
                         this.ArenaKeyTime = TimeSpan.MaxValue;
                     }
-                    goto IL_164;
                 }
-                this.ArenaKeyTime = TimeSpan.MaxValue;
-            IL_164:;
             }
             this.ArenaKeys = num;
             this.ReportKeys(Objective.ARENA);
@@ -5902,10 +5899,7 @@ namespace SevenKnightsAI.Classes
                             this.TowerKeyTime = TimeSpan.MaxValue;
                         }
                     }
-                    goto IL_170;
                 }
-                this.TowerKeyTime = TimeSpan.MaxValue;
-            IL_170:;
             }
             this.TowerKeys = num;
             this.ReportKeys(Objective.GOLD_CHAMBER);

@@ -21,4 +21,4 @@ using System.Security.Permissions;
 [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: ComVisible(false)]
 [assembly: Guid("b55fdf8b-4769-4352-a811-b57299d7019b")]
-[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+//[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]

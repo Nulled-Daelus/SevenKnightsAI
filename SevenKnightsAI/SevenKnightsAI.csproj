@@ -182,7 +182,6 @@
     <Compile Include="Classes\ProfileComboBoxItem.cs" />
     <Compile Include="Classes\ProgressArgs.cs" />
     <Compile Include="Classes\ProgressType.cs" />
-    <Compile Include="Classes\Rect.cs" />
     <Compile Include="Classes\ResourceType.cs" />
     <Compile Include="Classes\Scene.cs" />
     <Compile Include="Classes\SceneType.cs" />
