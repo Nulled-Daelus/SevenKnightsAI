@@ -24,6 +24,7 @@
             this.AD_limitNumericBox = new System.Windows.Forms.NumericUpDown();
             this.AD_limitCheckBox = new System.Windows.Forms.CheckBox();
             this.AD_mainPanel = new System.Windows.Forms.Panel();
+            this.AD_CheckingHeroes_Checkbox = new System.Windows.Forms.CheckBox();
             this.AD_StopOnFullHeroes_Checkbox = new System.Windows.Forms.CheckBox();
             this.AD_sequenceButton = new System.Windows.Forms.Button();
             this.AD_elementHeroesCheckBox = new System.Windows.Forms.CheckBox();
@@ -276,6 +277,7 @@
             this.tsPixel = new System.Windows.Forms.ToolStripStatusLabel();
             this.aiButton = new System.Windows.Forms.Button();
             this.summaryGroupBox = new System.Windows.Forms.GroupBox();
+            this.HeroCountLabel = new System.Windows.Forms.Label();
             this.keysTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.arenaKeysLabel = new System.Windows.Forms.Label();
             this.adventureKeyPictureBox = new System.Windows.Forms.PictureBox();
@@ -440,6 +442,7 @@
             // 
             // AD_mainPanel
             // 
+            this.AD_mainPanel.Controls.Add(this.AD_CheckingHeroes_Checkbox);
             this.AD_mainPanel.Controls.Add(this.AD_StopOnFullHeroes_Checkbox);
             this.AD_mainPanel.Controls.Add(this.AD_sequenceButton);
             this.AD_mainPanel.Controls.Add(this.AD_elementHeroesCheckBox);
@@ -461,6 +464,17 @@
             this.AD_mainPanel.Name = "AD_mainPanel";
             this.AD_mainPanel.Size = new System.Drawing.Size(487, 278);
             this.AD_mainPanel.TabIndex = 13;
+            // 
+            // AD_CheckingHeroes_Checkbox
+            // 
+            this.AD_CheckingHeroes_Checkbox.AutoSize = true;
+            this.AD_CheckingHeroes_Checkbox.Location = new System.Drawing.Point(209, 258);
+            this.AD_CheckingHeroes_Checkbox.Name = "AD_CheckingHeroes_Checkbox";
+            this.AD_CheckingHeroes_Checkbox.Size = new System.Drawing.Size(138, 17);
+            this.AD_CheckingHeroes_Checkbox.TabIndex = 26;
+            this.AD_CheckingHeroes_Checkbox.Text = "HERO MAX LV CHECK";
+            this.AD_CheckingHeroes_Checkbox.UseVisualStyleBackColor = true;
+            this.AD_CheckingHeroes_Checkbox.CheckedChanged += new System.EventHandler(this.AD_CheckingHeroes_Checkbox_CheckedChanged);
             // 
             // AD_StopOnFullHeroes_Checkbox
             // 
@@ -2939,7 +2953,7 @@
             this.RS_sellHeroesCheckBox.AutoSize = true;
             this.RS_sellHeroesCheckBox.Location = new System.Drawing.Point(7, 20);
             this.RS_sellHeroesCheckBox.Name = "RS_sellHeroesCheckBox";
-            this.RS_sellHeroesCheckBox.Size = new System.Drawing.Size(223, 17);
+            this.RS_sellHeroesCheckBox.Size = new System.Drawing.Size(220, 17);
             this.RS_sellHeroesCheckBox.TabIndex = 2;
             this.RS_sellHeroesCheckBox.Tag = "0";
             this.RS_sellHeroesCheckBox.Text = "Lv.30 heroes with ★ less than or equal to";
@@ -2951,7 +2965,7 @@
             this.RS_sellItemsCheckBox.AutoSize = true;
             this.RS_sellItemsCheckBox.Location = new System.Drawing.Point(7, 48);
             this.RS_sellItemsCheckBox.Name = "RS_sellItemsCheckBox";
-            this.RS_sellItemsCheckBox.Size = new System.Drawing.Size(210, 17);
+            this.RS_sellItemsCheckBox.Size = new System.Drawing.Size(207, 17);
             this.RS_sellItemsCheckBox.TabIndex = 0;
             this.RS_sellItemsCheckBox.Tag = "1";
             this.RS_sellItemsCheckBox.Text = "Every item with ★ less than or equal to";
@@ -3421,6 +3435,7 @@
             // 
             // summaryGroupBox
             // 
+            this.summaryGroupBox.Controls.Add(this.HeroCountLabel);
             this.summaryGroupBox.Controls.Add(this.keysTableLayoutPanel);
             this.summaryGroupBox.Controls.Add(this.raidPictureBox);
             this.summaryGroupBox.Controls.Add(this.goldChamberPictureBox);
@@ -3436,6 +3451,15 @@
             this.summaryGroupBox.TabIndex = 4;
             this.summaryGroupBox.TabStop = false;
             this.summaryGroupBox.Text = "Summary";
+            // 
+            // HeroCountLabel
+            // 
+            this.HeroCountLabel.AutoSize = true;
+            this.HeroCountLabel.Location = new System.Drawing.Point(300, 45);
+            this.HeroCountLabel.Name = "HeroCountLabel";
+            this.HeroCountLabel.Size = new System.Drawing.Size(24, 13);
+            this.HeroCountLabel.TabIndex = 14;
+            this.HeroCountLabel.Text = "H: -";
             // 
             // keysTableLayoutPanel
             // 
@@ -3542,7 +3566,7 @@
             // raidPictureBox
             // 
             this.raidPictureBox.Image = global::SevenKnightsAI.Properties.Resources.icon_raid;
-            this.raidPictureBox.Location = new System.Drawing.Point(205, 63);
+            this.raidPictureBox.Location = new System.Drawing.Point(150, 63);
             this.raidPictureBox.Name = "raidPictureBox";
             this.raidPictureBox.Size = new System.Drawing.Size(19, 18);
             this.raidPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3553,7 +3577,7 @@
             // goldChamberPictureBox
             // 
             this.goldChamberPictureBox.Image = global::SevenKnightsAI.Properties.Resources.icon_gold_chamber;
-            this.goldChamberPictureBox.Location = new System.Drawing.Point(205, 43);
+            this.goldChamberPictureBox.Location = new System.Drawing.Point(150, 43);
             this.goldChamberPictureBox.Name = "goldChamberPictureBox";
             this.goldChamberPictureBox.Size = new System.Drawing.Size(19, 18);
             this.goldChamberPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3564,7 +3588,7 @@
             // arenaPictureBox
             // 
             this.arenaPictureBox.Image = global::SevenKnightsAI.Properties.Resources.icon_arena;
-            this.arenaPictureBox.Location = new System.Drawing.Point(35, 63);
+            this.arenaPictureBox.Location = new System.Drawing.Point(0, 63);
             this.arenaPictureBox.Name = "arenaPictureBox";
             this.arenaPictureBox.Size = new System.Drawing.Size(19, 18);
             this.arenaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3575,7 +3599,7 @@
             // adventurePictureBox
             // 
             this.adventurePictureBox.Image = global::SevenKnightsAI.Properties.Resources.icon_adventure;
-            this.adventurePictureBox.Location = new System.Drawing.Point(35, 43);
+            this.adventurePictureBox.Location = new System.Drawing.Point(0, 43);
             this.adventurePictureBox.Name = "adventurePictureBox";
             this.adventurePictureBox.Size = new System.Drawing.Size(19, 18);
             this.adventurePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3586,38 +3610,38 @@
             // raidCountLabel
             // 
             this.raidCountLabel.AutoSize = true;
-            this.raidCountLabel.Location = new System.Drawing.Point(223, 65);
+            this.raidCountLabel.Location = new System.Drawing.Point(175, 65);
             this.raidCountLabel.Name = "raidCountLabel";
-            this.raidCountLabel.Size = new System.Drawing.Size(38, 13);
+            this.raidCountLabel.Size = new System.Drawing.Size(24, 13);
             this.raidCountLabel.TabIndex = 4;
-            this.raidCountLabel.Text = "Raid: -";
+            this.raidCountLabel.Text = "R: -";
             // 
             // goldChamberCountLabel
             // 
             this.goldChamberCountLabel.AutoSize = true;
-            this.goldChamberCountLabel.Location = new System.Drawing.Point(223, 45);
+            this.goldChamberCountLabel.Location = new System.Drawing.Point(175, 45);
             this.goldChamberCountLabel.Name = "goldChamberCountLabel";
-            this.goldChamberCountLabel.Size = new System.Drawing.Size(83, 13);
+            this.goldChamberCountLabel.Size = new System.Drawing.Size(31, 13);
             this.goldChamberCountLabel.TabIndex = 3;
-            this.goldChamberCountLabel.Text = "Gold Chamber: -";
+            this.goldChamberCountLabel.Text = "GC: -";
             // 
             // arenaCountLabel
             // 
             this.arenaCountLabel.AutoSize = true;
-            this.arenaCountLabel.Location = new System.Drawing.Point(53, 65);
+            this.arenaCountLabel.Location = new System.Drawing.Point(20, 65);
             this.arenaCountLabel.Name = "arenaCountLabel";
-            this.arenaCountLabel.Size = new System.Drawing.Size(100, 13);
+            this.arenaCountLabel.Size = new System.Drawing.Size(75, 13);
             this.arenaCountLabel.TabIndex = 2;
-            this.arenaCountLabel.Text = "Arena (Win/Lose): -";
+            this.arenaCountLabel.Text = "Arena (W/L): -";
             // 
             // adventureCountLabel
             // 
             this.adventureCountLabel.AutoSize = true;
-            this.adventureCountLabel.Location = new System.Drawing.Point(53, 45);
+            this.adventureCountLabel.Location = new System.Drawing.Point(20, 45);
             this.adventureCountLabel.Name = "adventureCountLabel";
-            this.adventureCountLabel.Size = new System.Drawing.Size(65, 13);
+            this.adventureCountLabel.Size = new System.Drawing.Size(35, 13);
             this.adventureCountLabel.TabIndex = 1;
-            this.adventureCountLabel.Text = "Adventure: -";
+            this.adventureCountLabel.Text = "Adv: -";
             // 
             // saveSettingsButton
             // 
@@ -3657,7 +3681,7 @@
             // topheaderPictureBox
             // 
             this.topheaderPictureBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.topheaderPictureBox.Image = global::SevenKnightsAI.Properties.Resources.banner_main;
+            this.topheaderPictureBox.Image = global::SevenKnightsAI.Properties.Resources.banner_main_teo;
             this.topheaderPictureBox.Location = new System.Drawing.Point(0, 0);
             this.topheaderPictureBox.Name = "topheaderPictureBox";
             this.topheaderPictureBox.Size = new System.Drawing.Size(504, 80);
@@ -4773,5 +4797,7 @@
 		private System.Windows.Forms.CheckBox RD_DragonLimitCheckBox;
 		private System.Windows.Forms.CheckBox AD_StopOnFullHeroes_Checkbox;
         private System.Windows.Forms.Button LG_SaveScreen;
+        private System.Windows.Forms.Label HeroCountLabel;
+        private System.Windows.Forms.CheckBox AD_CheckingHeroes_Checkbox;
     }
 }

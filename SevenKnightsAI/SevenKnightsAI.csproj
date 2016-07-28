@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>rachel.ico</ApplicationIcon>
+    <ApplicationIcon>icons\teo.ico</ApplicationIcon>
     <StartupObject>SevenKnightsAI.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -245,16 +245,8 @@
     <None Include="icons\SevenKnights.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\banner_main.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="icons\rachel.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="icons\rachel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="rachel.ico" />
+    <None Include="icons\teo.ico" />
+    <None Include="icons\banner_main_teo.png" />
     <EmbeddedResource Include="Resources\Alien_AlarmDrum-KevanGC-893953959.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

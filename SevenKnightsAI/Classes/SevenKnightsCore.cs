@@ -110,6 +110,8 @@ namespace SevenKnightsAI.Classes
         private int RaidCount;
         private int RaidLimitCount;
         private int RubyCount;
+        private int HeroCount;
+        private string HeroMax;
         private SynchronizationContext SynchronizationContext;
         private Tesseractor Tesseractor;
         private int TopazCount;
@@ -1523,6 +1525,7 @@ namespace SevenKnightsAI.Classes
             this.GoldChamberLimitCount = 0;
             this.ArenaLimitCount = 0;
             this.RaidLimitCount = 0;
+            this.HeroCount = 0;
             this.AdventureKeys = -1;
             this.AdventureKeyTime = TimeSpan.MaxValue;
             this.TowerKeys = -1;
@@ -2539,6 +2542,7 @@ namespace SevenKnightsAI.Classes
 
                                         case SceneType.HEROES:
                                             this.UpdateAdventureKeys(scene.SceneType);
+                                            this.UpdateHeroCount();
                                             this.UpdateGold(scene.SceneType);
                                             this.UpdateRuby(scene.SceneType);
                                             if (this.CurrentObjective != Objective.HERO_MANAGEMENT && this.PreviousObjective != Objective.HERO_MANAGEMENT && this.CurrentObjective != Objective.SELL_HEROES && this.PreviousObjective != Objective.SELL_HEROES && this.AISettings.AD_Formation != Formation.None && this.AISettings.AD_HeroManagePositions != null && this.AISettings.AD_HeroManagePositions.Length > 0)
@@ -3445,6 +3449,12 @@ namespace SevenKnightsAI.Classes
             switch (this.CurrentObjective)
             {
                 case Objective.IDLE:
+                    if (this.AISettings.AD_CheckingHeroes && aD_Enable)
+                    {
+                        this.ChangeObjective(Objective.HERO_MANAGEMENT);
+                        this.AISettings.AD_CheckingHeroes = false;
+                        return;
+                    }
                     if (aD_Enable)
                     {
                         this.ChangeObjective(Objective.ADVENTURE);
@@ -4099,18 +4109,29 @@ namespace SevenKnightsAI.Classes
                 case Objective.RAID:
                     num = this.RaidCount;
                     break;
+
+                case Objective.HERO_MANAGEMENT:
+                    break;
             }
-            Dictionary<string, object> message = new Dictionary<string, object>
-            {
+                
+                 Dictionary<string, object> message = new Dictionary<string, object>
                 {
-                    "objective",
-                    objective
-                },
-                {
-                    "count",
-                    num
-                }
-            };
+                    {
+                        "objective",
+                        objective
+                    },
+                    {
+                        "count",
+                         num
+                    },
+                    {   "hc",
+                         HeroCount
+                    },
+                    {   "hm",
+                         HeroMax
+                    }
+                };
+
             ProgressArgs userState = new ProgressArgs(ProgressType.COUNT, message);
             this.Worker.ReportProgress(0, userState);
         }
@@ -4550,20 +4571,23 @@ namespace SevenKnightsAI.Classes
                     Scene result = new Scene(SceneType.GOLD_CHAMBER_LOOT);
                     return result;
                 }
-                if (this.MatchMapping(AdventureLootItemPM.AdventureButton, 2) && this.MatchMapping(AdventureLootItemPM.QuickStartButton, 2))
+                if (this.MatchMapping(AdventureLootGoldPM.AdventureButton, 3) && this.MatchMapping(AdventureLootGoldPM.QuickStartButton, 3) && this.MatchMapping(AdventureLootGoldPM.GoldLootIcon, 3))
                 {
-                    Scene result = new Scene(SceneType.ADVENTURE_LOOT_ITEM);
+                    Scene result = new Scene(SceneType.ADVENTURE_LOOT_GOLD);
                     return result;
                 }
-                if (this.MatchMapping(AdventureLootHeroPM.AdventureButton, 2) && this.MatchMapping(AdventureLootHeroPM.QuickStartButton, 2))
+                else if (this.MatchMapping(AdventureLootHeroPM.AdventureButton, 2) && this.MatchMapping(AdventureLootHeroPM.QuickStartButton, 2)&&(this.MatchMapping(AdventureLootHeroPM.oneStar, 2)|| this.MatchMapping(AdventureLootHeroPM.twoStar, 2)))
                 {
                     Scene result = new Scene(SceneType.ADVENTURE_LOOT_HERO);
                     return result;
                 }
-                if (this.MatchMapping(AdventureLootGoldPM.AdventureButton, 2) && this.MatchMapping(AdventureLootGoldPM.QuickStartButton, 2))
-                {
-                    Scene result = new Scene(SceneType.ADVENTURE_LOOT_GOLD);
-                    return result;
+                else
+                { 
+                    if (this.MatchMapping(AdventureLootItemPM.AdventureButton, 2) && this.MatchMapping(AdventureLootItemPM.QuickStartButton, 2))
+                    {
+                        Scene result = new Scene(SceneType.ADVENTURE_LOOT_ITEM);
+                        return result;
+                    }
                 }
                 if (this.MatchMapping(LootItemPM.ItemBorder, 4) && this.MatchMapping(LootItemPM.OkButton, 2) && this.MatchMapping(LootItemPM.OkButtonIcon, 2))
                 {
@@ -5549,6 +5573,48 @@ namespace SevenKnightsAI.Classes
             if ((!shouldUse && this.MatchMapping(SharedPM.Fight_AutoSkillOnTop, 4) && this.MatchMapping(SharedPM.Fight_AutoSkillOnBottom, 4)) || (shouldUse && this.MatchMapping(SharedPM.Fight_AutoSkillOff, 2)))
             {
                 this.WeightedClick(SharedPM.Fight_AutoSkillButton, 1.0, 1.0, 1, 0, "left");
+            }
+        }
+
+        private void UpdateHeroCount()
+        {
+            int curHero=HeroCount;
+            string maxHero=HeroMax;
+            Rectangle rect = HeroesPM.R_HeroCount;
+            using (Bitmap bitmap = this.CropFrame(this.BlueStacks.MainWindowAS.CurrentFrame, rect).ScaleByPercent(128))
+            {
+                using (Page page = this.Tesseractor.Engine.Process(bitmap, null))
+                {
+                    string text = page.GetText();
+                    Utility.FilterAscii(text);
+                    if (text.Length >= 2)
+                    {
+                        string[] array = text.Split(new char[]
+                            {
+                                '/'
+                            });
+
+                        if (array.Length >= 1)
+                            int.TryParse(array[0], out curHero);
+                        if (array.Length >= 2)
+                        {
+                            maxHero = array[1].Substring(0,3);
+                        }
+#if DEBUG
+                        this.Log(string.Format("HC: {0}/{1} String: {2}", curHero, maxHero, text.Trim()));
+                        bitmap.Save(string.Format("H_{0} of {1}.png", curHero, maxHero));
+#endif
+                    }
+                    if (HeroCount == 0)
+                    {
+                        this.HeroCount = curHero;
+                    }else if (HeroCount <= curHero)
+                    {
+                        this.HonorCount = curHero;
+                    }
+                    this.HeroMax = maxHero;
+                    this.ReportCount(Objective.HERO_MANAGEMENT);
+                }
             }
         }
 
