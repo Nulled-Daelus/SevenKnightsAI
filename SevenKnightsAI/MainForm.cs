@@ -11,6 +11,7 @@ using System.Globalization;
 using System.IO;
 using System.Media;
 using System.Net;
+using System.Reflection;
 using System.Security.Principal;
 using System.Threading;
 using System.Windows.Forms;
@@ -20,6 +21,7 @@ namespace SevenKnightsAI
 	public partial class MainForm : Form
 	{
 		#region Private Fields
+
 		private readonly CheckBox[][] _formationCheckBoxes = new CheckBox[2][];
 
 		private readonly Point[][] _formationPositions = new Point[][]
@@ -108,11 +110,11 @@ namespace SevenKnightsAI
 			}
 		}
 
-		#endregion Public Properties
+        #endregion Public Properties
 
-		#region Public Constructors
+        #region Public Constructors
 
-		public MainForm()
+        public MainForm()
 		{
 			this.InitializeComponent();
 			this.Init();
@@ -136,11 +138,11 @@ namespace SevenKnightsAI
 			}));
 		}
 
-		#endregion Public Methods
+        #endregion Public Methods
 
-		#region Private Methods
+        #region Private Methods
 
-		private void AD_continuousCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void AD_continuousCheckBox_CheckedChanged(object sender, EventArgs e)
 		{
 			CheckBox checkBox = sender as CheckBox;
 			this.AISettings.AD_Continuous = checkBox.Checked;
@@ -553,7 +555,7 @@ namespace SevenKnightsAI
 
 		private void contactUsLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("https://www.nulled.cr/topic/154393-heartcold-seven-knights-ai-v23-updated-for-v1044");
+			Process.Start("https://github.com/Nulled-Daelus/SevenKnightsAI");
 		}
 
 		private void contactUsLinkLabel_TextChanged(object sender, EventArgs e)
@@ -1056,7 +1058,9 @@ namespace SevenKnightsAI
 
 			//Loading Sound file and preparing it to play if needed.
 			this.AlertSound = new SoundPlayer(SevenKnightsAI.Properties.Resources.Alien_AlarmDrum_KevanGC_893953959);
-
+			string build = this.ProductVersion + "-" + Assembly.GetExecutingAssembly().GetLinkerTime().ToShortDateString();
+			this.tsslBuildInfo.Text = "Build: " + build;
+			AppendLog("Loaded Build: " + this.ProductVersion + "-" + Assembly.GetExecutingAssembly().GetLinkerTime().ToShortDateString());
 			this.loaded = true;
 		}
 
@@ -1762,5 +1766,6 @@ namespace SevenKnightsAI
             CheckBox checkBox = sender as CheckBox;
             this.AISettings.AD_CheckingHeroes = checkBox.Checked;
         }
-    }
+
+	}
 }
