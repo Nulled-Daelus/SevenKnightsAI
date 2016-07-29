@@ -413,9 +413,16 @@ namespace SevenKnightsAI
 							this.arenaCountLabel.Text = string.Format("{0} (Win/Lose): {1}/{2}", arg, num, num2);
 							return;
 						}
+
 						int num3 = (int)dictionary["count"];
-						string text = string.Format("{0}: {1} time{2}", arg, num3, (num3 > 1) ? "s" : string.Empty);
-						switch (objective)
+						string text = string.Format("{0}: {1}", arg, num3);
+                        if (objective == Objective.HERO_MANAGEMENT)
+                        {
+                            string t1 = ""+dictionary["hc"];
+                            string t2 = ""+ dictionary["hm"];
+                            text = string.Format("H : {0} / {1}",t1 , t2);
+                        }
+                        switch (objective)
 						{
 							case Objective.ADVENTURE:
 								this.adventureCountLabel.Text = text;
@@ -431,6 +438,10 @@ namespace SevenKnightsAI
 							case Objective.RAID:
 								this.raidCountLabel.Text = text;
 								return;
+
+                            case Objective.HERO_MANAGEMENT:
+                                this.HeroCountLabel.Text = text;
+                                return;
 
 							default:
 								return;
@@ -666,6 +677,7 @@ namespace SevenKnightsAI
 			this.AD_elementHeroesCheckBox.Checked = this.AISettings.AD_ElementHeroesOnly;
 			this.AD_masteryComboBox.SelectedIndex = (int)this.AISettings.AD_Mastery;
 			this.AD_StopOnFullHeroes_Checkbox.Checked = this.AISettings.AD_StopOnFullHeroes;
+            this.AD_CheckingHeroes_Checkbox.Checked = this.AISettings.AD_CheckingHeroes;
 			this.AD_wave1LoopCheckBox.Checked = this.AISettings.AD_Wave1Loop;
 			this.AD_wave2LoopCheckBox.Checked = this.AISettings.AD_Wave2Loop;
 			this.AD_wave3LoopCheckBox.Checked = this.AISettings.AD_Wave3Loop;
@@ -1744,5 +1756,11 @@ namespace SevenKnightsAI
 		}
 
         #endregion Private Methods
+
+        private void AD_CheckingHeroes_Checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox = sender as CheckBox;
+            this.AISettings.AD_CheckingHeroes = checkBox.Checked;
+        }
     }
 }

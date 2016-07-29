@@ -964,6 +964,14 @@ namespace SevenKnightsAI.Classes.Mappings
 			Type = MappingType.BUTTON
 		};
 
-		#endregion Public Fields
-	}
+        public static readonly Rectangle R_HeroCount = new Rectangle
+        {
+            X = 480,
+            Y = 65,
+            Width = 80,
+            Height = 40
+        };
+
+        #endregion Public Fields
+    }
 }
