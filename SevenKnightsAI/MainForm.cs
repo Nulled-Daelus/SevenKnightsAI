@@ -1058,9 +1058,9 @@ namespace SevenKnightsAI
 
 			//Loading Sound file and preparing it to play if needed.
 			this.AlertSound = new SoundPlayer(SevenKnightsAI.Properties.Resources.Alien_AlarmDrum_KevanGC_893953959);
-			string build = this.ProductVersion + "-" + Assembly.GetExecutingAssembly().GetLinkerTime().ToShortDateString();
+			string build = "v" + this.ProductVersion + "-" + Assembly.GetExecutingAssembly().GetLinkerTime().ToShortDateString();
 			this.tsslBuildInfo.Text = "Build: " + build;
-			AppendLog("Loaded Build: " + this.ProductVersion + "-" + Assembly.GetExecutingAssembly().GetLinkerTime().ToShortDateString());
+			AppendLog("Loaded Build: " + build);
 			this.loaded = true;
 		}
 
