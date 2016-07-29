@@ -3411,7 +3411,7 @@
 			// splitterStatusLabel
 			// 
 			this.splitterStatusLabel.Name = "splitterStatusLabel";
-			this.splitterStatusLabel.Size = new System.Drawing.Size(263, 17);
+			this.splitterStatusLabel.Size = new System.Drawing.Size(294, 17);
 			this.splitterStatusLabel.Spring = true;
 			// 
 			// tsslCursorPosition
