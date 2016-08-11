@@ -100,6 +100,7 @@
     <Compile Include="Classes\Mappings\AdsClosePM.cs" />
     <Compile Include="Classes\Mappings\AdsPM.cs" />
     <Compile Include="Classes\Mappings\AdventureFightPM.cs" />
+    <Compile Include="Classes\Mappings\AdventureLootPM.cs" />
     <Compile Include="Classes\Mappings\AdventureLootGoldPM.cs" />
     <Compile Include="Classes\Mappings\AdventureLootHeroPM.cs" />
     <Compile Include="Classes\Mappings\AdventureLootItemPM.cs" />

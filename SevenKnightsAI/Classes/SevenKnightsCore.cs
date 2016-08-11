@@ -2288,21 +2288,22 @@ namespace SevenKnightsAI.Classes
                                         case SceneType.ADVENTURE_LOOT_ITEM:
                                         case SceneType.ADVENTURE_LOOT_HERO:
                                         case SceneType.ADVENTURE_LOOT_GOLD:
+                                        case SceneType.ADVENTURE_LOOT:
                                             this.AdventureAfterFight();
                                             SevenKnightsCore.Sleep(500);
                                             if (this.CurrentObjective == Objective.ADVENTURE)
                                             {
                                                 if (this.AISettings.AD_Continuous && this.AISettings.AD_World != World.Sequencer)
                                                 {
-                                                    this.WeightedClick(AdventureLootItemPM.NextZoneButton, 1.0, 1.0, 1, 0, "left");
+                                                    this.WeightedClick(AdventureLootPM.NextZoneButton, 1.0, 1.0, 1, 0, "left");
                                                 }
                                                 else if (this.AISettings.AD_World == World.None)
                                                 {
-                                                    this.WeightedClick(AdventureLootItemPM.QuickStartButton, 1.0, 1.0, 1, 0, "left");
+                                                    this.WeightedClick(AdventureLootPM.QuickStartButton, 1.0, 1.0, 1, 0, "left");
                                                 }
                                                 else
                                                 {
-                                                    this.WeightedClick(AdventureLootItemPM.AgainButton, 1.0, 1.0, 1, 0, "left");
+                                                    this.WeightedClick(AdventureLootPM.AgainButton, 1.0, 1.0, 1, 0, "left");
                                                 }
                                             }
                                             else
@@ -4571,23 +4572,10 @@ namespace SevenKnightsAI.Classes
                     Scene result = new Scene(SceneType.GOLD_CHAMBER_LOOT);
                     return result;
                 }
-                if (this.MatchMapping(AdventureLootGoldPM.AdventureButton, 3) && this.MatchMapping(AdventureLootGoldPM.QuickStartButton, 3) && this.MatchMapping(AdventureLootGoldPM.GoldLootIcon, 3))
+                if (this.MatchMapping(AdventureLootPM.AdventureButton, 2) && this.MatchMapping(AdventureLootPM.QuickStartButton, 2))
                 {
-                    Scene result = new Scene(SceneType.ADVENTURE_LOOT_GOLD);
+                    Scene result = new Scene(SceneType.ADVENTURE_LOOT);
                     return result;
-                }
-                else if (this.MatchMapping(AdventureLootHeroPM.AdventureButton, 2) && this.MatchMapping(AdventureLootHeroPM.QuickStartButton, 2)&&(this.MatchMapping(AdventureLootHeroPM.oneStar, 2)|| this.MatchMapping(AdventureLootHeroPM.twoStar, 2)))
-                {
-                    Scene result = new Scene(SceneType.ADVENTURE_LOOT_HERO);
-                    return result;
-                }
-                else
-                { 
-                    if (this.MatchMapping(AdventureLootItemPM.AdventureButton, 2) && this.MatchMapping(AdventureLootItemPM.QuickStartButton, 2))
-                    {
-                        Scene result = new Scene(SceneType.ADVENTURE_LOOT_ITEM);
-                        return result;
-                    }
                 }
                 if (this.MatchMapping(LootItemPM.ItemBorder, 4) && this.MatchMapping(LootItemPM.OkButton, 2) && this.MatchMapping(LootItemPM.OkButtonIcon, 2))
                 {
@@ -4694,7 +4682,7 @@ namespace SevenKnightsAI.Classes
                     Scene result = new Scene(SceneType.TAP_TO_PLAY);
                     return result;
                 }
-                if (this.MatchMapping(LandingPM.Shield, 2) && this.MatchMapping(LandingPM.Moon, 2) && this.MatchMapping(LandingPM.CharacterFace, 2))
+                if (this.MatchMapping(LandingPM.Shield, 2))
                 {
                     Scene result = new Scene(SceneType.LANDING);
                     return result;
