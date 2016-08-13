@@ -3414,8 +3414,9 @@ namespace SevenKnightsAI.Classes
 
         private void MousePos()
         {
-            if (this.AIProfiles.TMP_LogPixel || this.AIProfiles.TMP_Paused)
+            if (this.AIProfiles.TMP_LogPixel && this.AIProfiles.TMP_Paused)
             {
+                Sleep(3000);
                 Point mousePos = this.BlueStacks.GetMousePos();
                 mousePos.X = mousePos.X - BlueStacks.OFFSET_X;
                 mousePos.Y = mousePos.Y - BlueStacks.OFFSET_Y;

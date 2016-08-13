@@ -8,9 +8,9 @@ namespace SevenKnightsAI.Classes.Mappings
 
 		public static readonly PixelMapping QuestAvailable = new PixelMapping
 		{
-			X = 501,
-			Y = 225,
-			Color = 13051648,
+			X = 515,
+			Y = 223,
+			Color = 13183490,
 			Type = MappingType.ANCHOR
 		};
 
@@ -32,9 +32,9 @@ namespace SevenKnightsAI.Classes.Mappings
 
 		public static readonly PixelMapping SpecialQuestAvailable = new PixelMapping
 		{
-			X = 347,
-			Y = 225,
-			Color = 13051648,
+			X = 365,
+			Y = 222,
+			Color = 13183490,
 			Type = MappingType.ANCHOR
 		};
 
