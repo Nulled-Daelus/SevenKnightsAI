@@ -3246,7 +3246,7 @@ namespace SevenKnightsAI.Classes
                                 SevenKnightsCore.Sleep(300);
                                 this.CaptureFrame();
                                 scene = this.SceneSearch();
-                                if (this.MatchMapping(HeroesPM.ElementButton, 2)||!this.MatchMapping(HeroesPM.ElementButton, 2))
+                                if (this.MatchMapping(HeroesPM.ElementButton, 2)||!this.MatchMapping(HeroesPM.ElementButton, 2) && !flag2)
                                 {
                                     this.WeightedClick(HeroesPM.ElementButton, 1.0, 1.0, 1, 0, "left");
                                     SevenKnightsCore.Sleep(1000);
