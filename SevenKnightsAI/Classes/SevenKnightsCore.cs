@@ -3172,6 +3172,7 @@ namespace SevenKnightsAI.Classes
                 this.HeroSortReset(true, true);
                 this.Log("Finding heroes...", this.COLOR_HEROES_MANAGEMENT);
                 bool flag = false;
+                bool flag4 = false; 
                 ulong num2 = 0uL;
                 double num3 = 91.0;
                 int num4 = 0;
@@ -3246,22 +3247,20 @@ namespace SevenKnightsAI.Classes
                                 SevenKnightsCore.Sleep(300);
                                 this.CaptureFrame();
                                 scene = this.SceneSearch();
-                                if (flag2)
+                                if (flag4)
                                 {
                                     this.DoneManageHeroes();
                                     return;
                                 }
-                                if (this.MatchMapping(HeroesPM.ElementButton, 2) ||!this.MatchMapping(HeroesPM.ElementButton, 2))
-                                {
+                                else{
                                     this.WeightedClick(HeroesPM.ElementButton, 1.0, 1.0, 1, 0, "left");
                                     SevenKnightsCore.Sleep(1000);
                                     num2 = 0uL;
                                     this.HeroSortReset(true, true);
                                     flag2 = true;
+                                    flag4 = true;
                                     break;
                                 }
-                                this.DoneManageHeroes();
-                                return;
                             }
                             else
                             {
