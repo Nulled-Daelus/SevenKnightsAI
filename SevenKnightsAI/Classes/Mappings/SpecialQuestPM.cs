@@ -37,7 +37,7 @@ namespace SevenKnightsAI.Classes.Mappings
 		{
 			X = 864,
 			Y = 150,
-			Color = 16770306,
+			Color = 16770562,
 			Type = MappingType.ANCHOR
 		};
 
@@ -45,8 +45,8 @@ namespace SevenKnightsAI.Classes.Mappings
 		public static readonly PixelMapping DailyAvailable = new PixelMapping
 		{
 			X = 324,
-			Y = 74,
-			Color = 13051648,
+			Y = 68,
+			Color = 13117698,
 			Type = MappingType.ANCHOR
 		};
 
@@ -81,8 +81,8 @@ namespace SevenKnightsAI.Classes.Mappings
 		public static readonly PixelMapping MonthlyAvailable = new PixelMapping
 		{
 			X = 753,
-			Y = 74,
-			Color = 13051648,
+			Y = 68,
+			Color = 12986369,
 			Type = MappingType.ANCHOR
 		};
 
@@ -114,8 +114,8 @@ namespace SevenKnightsAI.Classes.Mappings
 		public static readonly PixelMapping WeeklyAvailable = new PixelMapping
 		{
 			X = 541,
-			Y = 74,
-			Color = 13051648,
+			Y = 68,
+			Color = 13052161,
 			Type = MappingType.ANCHOR
 		};
 

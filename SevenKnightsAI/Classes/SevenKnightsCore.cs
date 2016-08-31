@@ -2288,21 +2288,22 @@ namespace SevenKnightsAI.Classes
                                         case SceneType.ADVENTURE_LOOT_ITEM:
                                         case SceneType.ADVENTURE_LOOT_HERO:
                                         case SceneType.ADVENTURE_LOOT_GOLD:
+                                        case SceneType.ADVENTURE_LOOT:
                                             this.AdventureAfterFight();
                                             SevenKnightsCore.Sleep(500);
                                             if (this.CurrentObjective == Objective.ADVENTURE)
                                             {
                                                 if (this.AISettings.AD_Continuous && this.AISettings.AD_World != World.Sequencer)
                                                 {
-                                                    this.WeightedClick(AdventureLootItemPM.NextZoneButton, 1.0, 1.0, 1, 0, "left");
+                                                    this.WeightedClick(AdventureLootPM.NextZoneButton, 1.0, 1.0, 1, 0, "left");
                                                 }
                                                 else if (this.AISettings.AD_World == World.None)
                                                 {
-                                                    this.WeightedClick(AdventureLootItemPM.QuickStartButton, 1.0, 1.0, 1, 0, "left");
+                                                    this.WeightedClick(AdventureLootPM.QuickStartButton, 1.0, 1.0, 1, 0, "left");
                                                 }
                                                 else
                                                 {
-                                                    this.WeightedClick(AdventureLootItemPM.AgainButton, 1.0, 1.0, 1, 0, "left");
+                                                    this.WeightedClick(AdventureLootPM.AgainButton, 1.0, 1.0, 1, 0, "left");
                                                 }
                                             }
                                             else
@@ -3171,6 +3172,7 @@ namespace SevenKnightsAI.Classes
                 this.HeroSortReset(true, true);
                 this.Log("Finding heroes...", this.COLOR_HEROES_MANAGEMENT);
                 bool flag = false;
+                bool flag4 = false; 
                 ulong num2 = 0uL;
                 double num3 = 91.0;
                 int num4 = 0;
@@ -3245,22 +3247,20 @@ namespace SevenKnightsAI.Classes
                                 SevenKnightsCore.Sleep(300);
                                 this.CaptureFrame();
                                 scene = this.SceneSearch();
-                                if (this.AISettings.AD_ElementHeroesOnly)
+                                if (flag4)
                                 {
                                     this.DoneManageHeroes();
                                     return;
                                 }
-                                if (this.MatchMapping(HeroesPM.ElementButton, 2))
-                                {
+                                else{
                                     this.WeightedClick(HeroesPM.ElementButton, 1.0, 1.0, 1, 0, "left");
                                     SevenKnightsCore.Sleep(1000);
                                     num2 = 0uL;
                                     this.HeroSortReset(true, true);
                                     flag2 = true;
+                                    flag4 = true;
                                     break;
                                 }
-                                this.DoneManageHeroes();
-                                return;
                             }
                             else
                             {
@@ -3413,8 +3413,9 @@ namespace SevenKnightsAI.Classes
 
         private void MousePos()
         {
-            if (this.AIProfiles.TMP_LogPixel || this.AIProfiles.TMP_Paused)
+            if (this.AIProfiles.TMP_LogPixel && this.AIProfiles.TMP_Paused)
             {
+                Sleep(3000);
                 Point mousePos = this.BlueStacks.GetMousePos();
                 mousePos.X = mousePos.X - BlueStacks.OFFSET_X;
                 mousePos.Y = mousePos.Y - BlueStacks.OFFSET_Y;
@@ -4571,23 +4572,10 @@ namespace SevenKnightsAI.Classes
                     Scene result = new Scene(SceneType.GOLD_CHAMBER_LOOT);
                     return result;
                 }
-                if (this.MatchMapping(AdventureLootGoldPM.AdventureButton, 3) && this.MatchMapping(AdventureLootGoldPM.QuickStartButton, 3) && this.MatchMapping(AdventureLootGoldPM.GoldLootIcon, 3))
+                if (this.MatchMapping(AdventureLootPM.AdventureButton, 2) && this.MatchMapping(AdventureLootPM.QuickStartButton, 2))
                 {
-                    Scene result = new Scene(SceneType.ADVENTURE_LOOT_GOLD);
+                    Scene result = new Scene(SceneType.ADVENTURE_LOOT);
                     return result;
-                }
-                else if (this.MatchMapping(AdventureLootHeroPM.AdventureButton, 2) && this.MatchMapping(AdventureLootHeroPM.QuickStartButton, 2)&&(this.MatchMapping(AdventureLootHeroPM.oneStar, 2)|| this.MatchMapping(AdventureLootHeroPM.twoStar, 2)))
-                {
-                    Scene result = new Scene(SceneType.ADVENTURE_LOOT_HERO);
-                    return result;
-                }
-                else
-                { 
-                    if (this.MatchMapping(AdventureLootItemPM.AdventureButton, 2) && this.MatchMapping(AdventureLootItemPM.QuickStartButton, 2))
-                    {
-                        Scene result = new Scene(SceneType.ADVENTURE_LOOT_ITEM);
-                        return result;
-                    }
                 }
                 if (this.MatchMapping(LootItemPM.ItemBorder, 4) && this.MatchMapping(LootItemPM.OkButton, 2) && this.MatchMapping(LootItemPM.OkButtonIcon, 2))
                 {
@@ -4694,7 +4682,7 @@ namespace SevenKnightsAI.Classes
                     Scene result = new Scene(SceneType.TAP_TO_PLAY);
                     return result;
                 }
-                if (this.MatchMapping(LandingPM.Shield, 2) && this.MatchMapping(LandingPM.Moon, 2) && this.MatchMapping(LandingPM.CharacterFace, 2))
+                if (this.MatchMapping(LandingPM.Shield, 2))
                 {
                     Scene result = new Scene(SceneType.LANDING);
                     return result;

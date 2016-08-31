@@ -39,6 +39,7 @@ namespace SevenKnightsAI.Classes
         ADVENTURE_LOOT_HERO,
         ADVENTURE_LOOT_GOLD,
         ADVENTURE_LOOT_HERO_SPECIAL,
+        ADVENTURE_LOOT,
         OUT_OF_KEYS_OFFER,
         OUT_OF_KEYS_POPUP,
         TOWER_SELECT,
