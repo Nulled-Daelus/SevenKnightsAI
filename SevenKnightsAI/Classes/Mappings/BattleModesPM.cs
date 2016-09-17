@@ -18,8 +18,8 @@ namespace SevenKnightsAI.Classes.Mappings
 		{
 			X = 884,
 			Y = 274,
-			Color = 5786939,
-			Type = MappingType.ANCHOR
+            Color = 5721150,
+            Type = MappingType.ANCHOR
 		};
 
 		public static readonly PixelMapping BorderBottomRightIndonesian = new PixelMapping
@@ -34,8 +34,8 @@ namespace SevenKnightsAI.Classes.Mappings
 		{
 			X = 130,
 			Y = 114,
-			Color = 16777214,
-			Type = MappingType.ANCHOR
+            Color = 16776956,
+            Type = MappingType.ANCHOR
 		};
 
 		public static readonly PixelMapping BorderTopLeftIndonesian = new PixelMapping
